@@ -19,4 +19,3 @@ images.map(img => {
   <li><img src = "${img.url}" alt = "${img.alt}"  width = "200" height = "100" /></li>`,
   );
 });
-

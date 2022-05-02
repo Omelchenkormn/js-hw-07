@@ -1,23 +1,14 @@
-const findItemNum = document.querySelectorAll('.item');
-console.log(`В списке ${findItemNum.length} категории.`);
+const catAndEl = () => {
+  const categories = document.querySelectorAll('.item');
+  console.log(`В списке ${categories.length} категории`);
 
-const valueArray = [...findItemNum]
-  .map(item => `Категория: ${item.children[0].textContent}
-Количество элементов: ${item.children[1].children.length}`
-  )
-  .join('\n');
-console.log(valueArray);
-
-===================================
-const findItemNum = document.querySelectorAll('.item');
-  
-const logItemsLength = (items) => {
-  console.log(`В списке ${items.length} категории.`);
-}
-
-findItemNum.forEach(item => {
-    console.log(`Категория: ${item.children[0].textContent}`)
-    console.log(`Количество элементов: ${item.children[1].children.length}`)
-});
+  categories.forEach(element => {
+    console.log(`Категория: ${element.querySelector('h2').textContent}`);
+    console.log(
+      `В категории: ${element.querySelectorAll('li').length} элементов`,
+    );
+  });
+};
+catAndEl();
 
 
